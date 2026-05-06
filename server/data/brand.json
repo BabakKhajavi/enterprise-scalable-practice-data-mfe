@@ -1,0 +1,107 @@
+[
+  {
+    "data": {
+      "tenantId": "01DEFAULTTENANTID",
+      "favIconUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Bitmap_Icon_Favicon.png",
+      "smallLogoUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=64&h=64",
+      "slug": "default",
+      "createdAt": 1775998909360,
+      "modifiedBy": "admin@example.com",
+      "fontFamily": "Montserrat, Arial, sans-serif",
+      "modifiedAt": 1776030448402,
+      "colors": {
+        "border": "#F3C1E6",
+        "iconDefault": "#D72660",
+        "primaryText": "#3D003D",
+        "primaryDisabled": "#F8D6EC",
+        "secondaryContrastText": "#FFFFFF",
+        "primaryHover": "#B8005C",
+        "bgDefault": "#FFF0FA",
+        "secondaryText": "#FFFFFF",
+        "secondary": "#A1005B",
+        "primaryContrastText": "#FFFFFF",
+        "secondarySelectBg": "#F3C1E6",
+        "iconDark": "#7A004C",
+        "primaryLoader": "#FF4F9D",
+        "secondaryDisabled": "#F3C1E6",
+        "primarySelectBg": "#FFD6F5",
+        "primary": "#D72660",
+        "secondaryLoader": "#FF4F9D",
+        "secondaryHover": "#B8005C"
+      },
+      "brandId": "01DEFAULTBRANDID",
+      "logoUrl": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=100"
+    },
+    "success": true
+  },
+  {
+    "data": {
+      "fontFamily": "Inter",
+      "favIconUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Orange_icon.svg",
+      "smallLogoUrl": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=facearea&w=64&h=64",
+      "slug": "companyA",
+      "logoUrl": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=100",
+      "brandId": "01KP1D0QAFYCCZSM360A5PJCX9",
+      "createdAt": 1776016186703,
+      "colors": {
+        "border": "#FFD6A5",
+        "iconDefault": "#FF8500",
+        "primaryText": "#4E260E",
+        "primaryDisabled": "#FFE5B4",
+        "secondaryContrastText": "#FFF8F0",
+        "primaryHover": "#FF6F00",
+        "bgDefault": "#FFF8F0",
+        "secondaryText": "#FFFFFF",
+        "secondary": "#FFB347",
+        "primaryContrastText": "#FFFFFF",
+        "secondarySelectBg": "#FFE5B4",
+        "iconDark": "#B85C00",
+        "primaryLoader": "#FFB347",
+        "secondaryDisabled": "#FFD6A5",
+        "primarySelectBg": "#FFF3E0",
+        "primary": "#FF8500",
+        "secondaryLoader": "#FFB347",
+        "secondaryHover": "#FF9900"
+      },
+      "tenantId": "01KP1CYHHZZHZNGP5YZD3JH010",
+      "modifiedAt": 1776031809750,
+      "modifiedBy": "bob.khajavi@gmail.com"
+    },
+    "success": true
+  },
+  {
+    "data": {
+      "fontFamily": "Inter",
+      "favIconUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Blue_square_icon.svg",
+      "smallLogoUrl": "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=facearea&w=64&h=64",
+      "slug": "companyB",
+      "logoUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&h=100",
+      "brandId": "01KP1D0QAFYCCZSM360A5PJCX8",
+      "createdAt": 1776016186703,
+      "colors": {
+        "border": "#A7FFEB",
+        "iconDefault": "#00B8A9",
+        "primaryText": "#003B46",
+        "primaryDisabled": "#B2DFDB",
+        "secondaryContrastText": "#E0F7FA",
+        "primaryHover": "#008891",
+        "bgDefault": "#E0F7FA",
+        "secondaryText": "#FFFFFF",
+        "secondary": "#00B8A9",
+        "primaryContrastText": "#FFFFFF",
+        "secondarySelectBg": "#A7FFEB",
+        "iconDark": "#005662",
+        "primaryLoader": "#00B8A9",
+        "secondaryDisabled": "#B2DFDB",
+        "primarySelectBg": "#B2EBF2",
+        "primary": "#008891",
+        "secondaryLoader": "#00B8A9",
+        "secondaryHover": "#005662"
+      },
+      "tenantId": "01KP1CYHHZZHZNGP5YZD3JH011",
+      "modifiedAt": 1776031809750,
+      "modifiedBy": "bob.khajavi@gmail.com"
+    },
+    "success": true
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "timezone": "America/Toronto",
+    "modifiedBy": null,
+    "modifiedAt": 1776629523106,
+    "phone": null,
+    "title": "",
+    "userId": "01KMY2S6F2B6ZECK4X8D51YCN5",
+    "email": "bob.khajavi@gmail.com",
+    "createdAt": 1774831049186,
+    "firstName": "Babak",
+    "tenantId": "01KMY2S6EDKP18Q36KGW42GR32",
+    "notificationSettingId": null,
+    "avatarUrl": null,
+    "isDeleted": false,
+    "role": "BUSINESS_ADMIN",
+    "lastName": "Khajavi",
+    "deletedAt": null,
+    "lastLoginAt": null,
+    "emailVerified": true
+  }
+]
