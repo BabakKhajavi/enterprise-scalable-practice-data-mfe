@@ -18,7 +18,7 @@ export default {
   },
   output: {
     publicPath: 'auto',
-    library: { type: 'window', name: 'enterprise_scalable_practice_data' },
+    library: { type: 'window', name: 'enterprise_data' },
     clean: true,
   },
   resolve: {
@@ -34,7 +34,7 @@ export default {
   },
   plugins: [
     new webpack.container.ModuleFederationPlugin({
-      name: 'enterprise_scalable_practice_data',
+      name: 'enterprise_data',
       filename: 'remoteEntry.js',
       exposes: {
         './Store': './src/store/index.ts',

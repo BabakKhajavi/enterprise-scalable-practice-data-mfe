@@ -32,17 +32,3 @@ export interface BrandConfigColors extends BrandColors {
   secondarySelectBg: string;
   primarySelectBg: string;
 }
-
-export interface BrandConfig {
-  brandId: string;
-  tenantId: string;
-  slug: string;
-  colors: BrandConfigColors;
-  fontFamily: string;
-  favIconUrl: string;
-  smallLogoUrl: string;
-  logoUrl: string;
-  createdAt: number;
-  modifiedAt?: number | null;
-  modifiedBy?: string | null;
-}

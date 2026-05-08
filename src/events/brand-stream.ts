@@ -1,21 +1,22 @@
 // shared-state/brand.subject.ts
 
 import { BehaviorSubject } from 'rxjs';
-import { BrandConfig } from '../types/brand';
+import { Brand } from '../types/brand';
 
-declare global {
-  interface Window {
-    __themeConfig?: BrandConfig;
-  }
-}
+const initialBrand = window.__themeConfig ?? null;
 
-export const brand$ = new BehaviorSubject<BrandConfig | null>(
-  window.__themeConfig ?? null,
-);
+export const brand$ = new BehaviorSubject<Brand | null>(initialBrand);
 
-export const setBrand = (brand: BrandConfig) => {
+export const setBrand = (brand: Brand) => {
   window.__themeConfig = brand;
   brand$.next(brand);
 };
 
-export const getCurrentBrand = () => brand$.getValue();
+export const clearBrand = () => {
+  window.__themeConfig = undefined;
+  brand$.next(null);
+};
+
+export const getCurrentBrand = () => {
+  return brand$.getValue();
+};
