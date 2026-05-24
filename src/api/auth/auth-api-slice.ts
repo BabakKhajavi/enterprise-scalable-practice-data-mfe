@@ -20,10 +20,12 @@ interface RegularSignUpPayload {
 interface RegularLoginPayload {
   email: string;
 }
+
 interface VerifyOtpPayload {
   email: string;
   otp: string;
 }
+
 interface GoogleAuthPayload {
   code: string;
   state?: string;
@@ -32,29 +34,45 @@ interface GoogleAuthPayload {
 export const authApiSlice = createApi({
   reducerPath: 'usersApi',
   baseQuery: baseQuery,
-  tagTypes: ['OnboardingSteps'],
+  tagTypes: ['Users', 'Auth'],
   endpoints: (builder) => ({
-    regularSignUp: builder.query<any, RegularSignUpPayload>({
-      query: (payload: any) => ({
+    // ✅ Optimistic update: new user is pushed to the Users cache immediately;
+    //    rolled back if the server rejects (e.g. email already taken).
+    regularSignUp: builder.mutation<any, RegularSignUpPayload>({
+      query: (payload) => ({
         url: '/auth/signup',
         method: APIMethods.POST,
         body: payload,
       }),
-      onQueryStarted: async (_: any, { queryFulfilled }) => {
+      invalidatesTags: ['Users'],
+      onQueryStarted: async (payload, { dispatch, queryFulfilled }) => {
+        const patchResult = dispatch(
+          authApiSlice.util.updateQueryData('getUsers', undefined, (draft) => {
+            draft.push({
+              firstName: payload.firstName,
+              lastName: payload.lastName,
+              email: payload.email,
+              phone: payload.phone,
+              timezone: payload.timezone,
+              status: 'pending',
+            });
+          }),
+        );
         try {
           await queryFulfilled;
         } catch (error) {
+          patchResult.undo();
           console.error('Sign Up Error:', error);
         }
       },
     }),
-    regularLogin: builder.query<any, RegularLoginPayload>({
-      query: (payload: any) => ({
+    regularLogin: builder.mutation<any, RegularLoginPayload>({
+      query: (payload) => ({
         url: '/auth/login',
         method: APIMethods.POST,
         body: payload,
       }),
-      onQueryStarted: async (_: any, { queryFulfilled }) => {
+      onQueryStarted: async (_, { queryFulfilled }) => {
         try {
           await queryFulfilled;
         } catch (error) {
@@ -62,13 +80,13 @@ export const authApiSlice = createApi({
         }
       },
     }),
-    verifyOtp: builder.query<any, VerifyOtpPayload>({
-      query: (payload: any) => ({
+    verifyOtp: builder.mutation<any, VerifyOtpPayload>({
+      query: (payload) => ({
         url: '/auth/verify-otp',
         method: APIMethods.POST,
         body: payload,
       }),
-      onQueryStarted: async (_: any, { queryFulfilled }) => {
+      onQueryStarted: async (_, { queryFulfilled }) => {
         try {
           await queryFulfilled;
         } catch (error) {
@@ -76,13 +94,13 @@ export const authApiSlice = createApi({
         }
       },
     }),
-    getUsers: builder.query<any, VerifyOtpPayload>({
-      query: (payload: any) => ({
+    getUsers: builder.query<any[], void>({
+      query: () => ({
         url: '/auth/users',
-        method: APIMethods.POST,
-        body: payload,
+        method: APIMethods.GET,
       }),
-      onQueryStarted: async (_: any, { queryFulfilled }) => {
+      providesTags: ['Users'],
+      onQueryStarted: async (_, { queryFulfilled }) => {
         try {
           await queryFulfilled;
         } catch (error) {
@@ -90,43 +108,13 @@ export const authApiSlice = createApi({
         }
       },
     }),
-    getGoogleAuthUrl: builder.query<any, void>({
-      query: () => ({
-        url: '/auth/google-auth-url',
-        method: APIMethods.GET,
-      }),
-      onQueryStarted: async (_: any, { queryFulfilled }) => {
-        try {
-          await queryFulfilled;
-        } catch (error) {
-          console.error('Get Google Auth URL Error:', error);
-        }
-      },
-    }),
-    googleCallback: builder.mutation<any, GoogleAuthPayload>({
-      query: (payload) => ({
-        url: '/auth/google-auth',
-        method: APIMethods.POST,
-        body: payload,
-      }),
-      onQueryStarted: async (_: any, { queryFulfilled }) => {
-        try {
-          await queryFulfilled;
-        } catch (error) {
-          console.error('Google Callback Error:', error);
-        }
-      },
-    }),
   }),
 });
 
 export const {
-  useLazyRegularSignUpQuery,
-  useLazyRegularLoginQuery,
-  useLazyVerifyOtpQuery,
-  useLazyGetUsersQuery,
-  useVerifyOtpQuery,
+  useRegularSignUpMutation,
+  useRegularLoginMutation,
+  useVerifyOtpMutation,
   useGetUsersQuery,
-  useLazyGetGoogleAuthUrlQuery,
-  useGoogleCallbackMutation,
+  useLazyGetUsersQuery,
 } = authApiSlice;

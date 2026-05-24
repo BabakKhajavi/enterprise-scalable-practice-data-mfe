@@ -27,8 +27,13 @@ app.get('/brands/slug/:slug', (req, res) => {
   res.json(selectedBrand);
 });
 
-app.get('/auth', (req, res) => {
-  res.json(getJsonData('user.json'));
+app.post('/auth/verify-otp', (req, res) => {
+  const user = getJsonData('user.json');
+  res.json({
+    success: true,
+    user,
+    token: 'jwt_token_placeholder',
+  });
 });
 
 app.get('/dashboard', (req, res) => {

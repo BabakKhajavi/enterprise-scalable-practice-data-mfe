@@ -1,22 +1,20 @@
-[
-  {
-    "timezone": "America/Toronto",
-    "modifiedBy": null,
-    "modifiedAt": 1776629523106,
-    "phone": null,
-    "title": "",
-    "userId": "01KMY2S6F2B6ZECK4X8D51YCN5",
-    "email": "bob.khajavi@gmail.com",
-    "createdAt": 1774831049186,
-    "firstName": "Babak",
-    "tenantId": "01KMY2S6EDKP18Q36KGW42GR32",
-    "notificationSettingId": null,
-    "avatarUrl": null,
-    "isDeleted": false,
-    "role": "BUSINESS_ADMIN",
-    "lastName": "Khajavi",
-    "deletedAt": null,
-    "lastLoginAt": null,
-    "emailVerified": true
-  }
-]
+{
+  "userId": "550e8400-e29b-41d4-a716-446655440000",
+  "tenantId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "notificationSettingId": "notif-001",
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "role": "ADMIN",
+  "avatarUrl": "https://example.com/avatars/jane.png",
+  "phone": "+1-555-123-4567",
+  "title": "Engineering Manager",
+  "timezone": "America/New_York",
+  "emailVerified": true,
+  "lastLoginAt": "2026-05-24T10:30:00.000Z",
+  "isDeleted": false,
+  "createdAt": 1748044200000,
+  "modifiedAt": 1748044200000,
+  "deletedAt": null,
+  "modifiedBy": "550e8400-e29b-41d4-a716-446655440001"
+}

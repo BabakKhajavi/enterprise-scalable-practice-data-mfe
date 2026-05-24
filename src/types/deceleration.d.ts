@@ -9,8 +9,10 @@ declare const module: {
 declare global {
   interface Window {
     __themeConfig?: Brand;
-
+    __brandConfig?: Brand;
     __brandSlug?: string;
+    __brandReady?: Promise<void>;
+    __POWERED_BY_SHELL__?: boolean;
   }
 }
 

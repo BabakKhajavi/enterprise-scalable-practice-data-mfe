@@ -8,4 +8,6 @@ export enum APIMethods {
 
 export enum CacheTags {
   BRAND_CONFIG = 'BRAND_CONFIG',
+  BRAND = 'BRAND',
+  BRANDS = 'BRANDS',
 }
